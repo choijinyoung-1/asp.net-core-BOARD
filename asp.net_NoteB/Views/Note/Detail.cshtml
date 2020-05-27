@@ -1,0 +1,33 @@
+﻿
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header">상세 읽기 - @Model.NoteTitle</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-10">
+        <div class="card">
+            <div class="card-header">
+                @Model.NoteTitle
+            </div>
+            <div class="card-body">
+                @Html.Raw(Model.NoteContents)
+            </div>
+        </div>
+        <div class="card-text text-right" style="padding-top:20px;">
+            <a class="btn btn-danger asp-controller="Note" asp-action="Delete">
+                <script language="javascript">
+                    function Test() {
+                        if (confirm("정말로 상품정보를 삭제하시겠습니까?"))
+                            return true;
+                        else
+                            return false;
+                    }
+                </script>삭제
+            </a>
+            <a class="btn btn-primary" style="margin-right:20px;" asp-controller="Note" asp-action="Edit">수정</a>
+            <a class="btn btn-primary" asp-controller="Note" asp-action="Index">목록</a>
+        </div>
+    </div>
+</div>
